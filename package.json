@@ -1,0 +1,19 @@
+{
+  "name": "user-support-helper",
+  "main": "./lib/user-support-helper",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "helper", "user-support"
+  ],
+  "activationCommands": {
+    "atom-workspace": "user-support-helper:toggle"
+  },
+  "repository": "https://github.com/HiroakiMikami/atom-user-support-helper",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
