@@ -17,6 +17,7 @@
   "dependencies": {
     "bluebird": ">=3.3.1 <4.0.0",
     "loophole": ">=1.1.0 < 2.0.0",
-    "pug": ">=2.0.0-alpha7 <3.0.0"
+    "pug": ">=2.0.0-alpha7 <3.0.0",
+    "atom-space-pen-views": "^2.0.3"
   }
 }
