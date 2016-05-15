@@ -1,0 +1,17 @@
+div(class="user-support-helper prompot-view section-container #{className}")
+  div.section-heading
+    a(class="pull-right close-icon")
+    h3.name= name
+    div.message= message
+  div.container
+    div.row
+      div.col-sm-11
+        span.input!= input
+      div(class="col-sm-1 status")
+        span(class="pull-left label label-danger")
+    div.row!= detail
+  div.section-footer
+    button(class="pull-right btn btn menu-btn prompt-finish") !{words.finish}
+    button(class="pull-right btn btn menu-btn prompt-next") !{words.next}
+    button(class="pull-right btn btn menu-btn prompt-skip") !{words.skip}
+    button(class="pull-right btn btn menu-btn prompt-back") !{words.back}
