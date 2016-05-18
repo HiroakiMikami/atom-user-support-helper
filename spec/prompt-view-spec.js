@@ -1,8 +1,21 @@
 'use babel';
 
+import fs from 'fs';
 import PromptView from '../lib/prompt-view';
 
 describe('PromptView', () => {
+  beforeEach((done) => {
+    let destination = `${atom.configDirPath}/packages/user-support-helper`;
+    let source = `${fs.realpathSync('./')}`;
+    fs.accessSync(`${destination}`, fs.R_OK, (err) => {
+      if (err) {
+        fs.symlink(source, destination, 'dir', () => {
+          done();
+        })
+      }
+    })
+  })
+
   describe('when constructing', () => {
     it('generates a DOM using the parameters', () => {
       const prompt = new PromptView({
