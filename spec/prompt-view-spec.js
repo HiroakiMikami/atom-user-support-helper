@@ -4,15 +4,22 @@ import fs from 'fs';
 import PromptView from '../lib/prompt-view';
 
 describe('PromptView', () => {
-  beforeEach((done) => {
+  beforeEach(() => {
     let destination = `${atom.configDirPath}/packages/user-support-helper`;
     let source = `${fs.realpathSync('./')}`;
-    fs.accessSync(`${destination}`, fs.R_OK, (err) => {
-      if (err) {
-        fs.symlink(source, destination, 'dir', () => {
-          done();
+
+    waitsForPromise(() => {
+      return new Promise((resolve) => {
+        fs.access(`${destination}`, fs.R_OK, (err) => {
+          if (err) {
+            fs.symlink(source, destination, 'dir', () => {
+              resolve();
+            })
+          } else {
+            resolve();
+          }
         })
-      }
+      })
     })
   })
 
