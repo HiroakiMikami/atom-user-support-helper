@@ -5,8 +5,8 @@ import PromptView from '../lib/prompt-view';
 
 describe('PromptView', () => {
   beforeEach(() => {
-    let destination = `${atom.configDirPath}/packages/user-support-helper`;
-    let source = `${fs.realpathSync('./')}`;
+    const destination = `${atom.configDirPath}/packages/user-support-helper`;
+    const source = `${fs.realpathSync('./')}`;
 
     waitsForPromise(() => {
       return new Promise((resolve) => {
