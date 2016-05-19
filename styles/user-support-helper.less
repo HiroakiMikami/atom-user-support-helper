@@ -8,4 +8,20 @@
   .menu-btn {
     margin: @component-icon-padding;
   }
+
+  span.close-icon:before {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: block;
+    z-index: 100000;
+    font-size: @font-size;
+    width: @font-size;
+    height: @font-size;
+    -web-kit-font-smoothing: antialiased;
+    content:"\f081";
+    font-family: 'Octicons Regular';
+    transform: scale(1, 1);
+    padding-right: @component-padding;
+  }
 }
