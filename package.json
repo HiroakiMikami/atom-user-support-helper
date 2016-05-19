@@ -7,7 +7,6 @@
     "helper", "user-support"
   ],
   "activationCommands": {
-    "atom-workspace": "user-support-helper:toggle"
   },
   "repository": "https://github.com/HiroakiMikami/atom-user-support-helper",
   "license": "MIT",
