@@ -4,14 +4,19 @@
   "version": "0.0.0",
   "description": "",
   "keywords": [
-    "helper", "user-support"
+    "helper",
+    "user-support"
   ],
-  "activationCommands": {
-  },
   "repository": "https://github.com/HiroakiMikami/atom-user-support-helper",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
+  },
+  "providedServices": {
+    "user-support-helper": {
+      "description": "A helper for user-support features",
+      "versions": { "0.0.0": "provideUserSupportHelper" }
+    }
   },
   "dependencies": {
     "bluebird": ">=3.3.1 <4.0.0",
