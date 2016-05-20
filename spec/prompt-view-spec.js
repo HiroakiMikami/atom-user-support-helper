@@ -79,7 +79,7 @@ describe('PromptView', () => {
       ).hasAttribute('disabled')).toBe(true)
 
       prompt.getElement().querySelector('atom-text-editor').getModel().setText('test');
-      prompt.getElement().querySelector('atom-text-editor').onkeyup();
+      prompt.getElement().querySelector('atom-text-editor').dispatchEvent(new Event('keyup'));
       expect(prompt.getElement().querySelector(
         '.user-support-helper .section-footer .prompt-next'
       ).hasAttribute('disabled')).toBe(false)
