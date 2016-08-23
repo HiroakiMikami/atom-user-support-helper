@@ -28,7 +28,7 @@ describe('RandomTipPanel', () => {
       if (currentValue) {
         atom.config.set('user-support-helper-test.show-tips', currentValue)
       } else {
-        atom.conig.removeKeyPath('user-support-helper-test.show-tips')
+        atom.config.unset('user-support-helper-test.show-tips')
       }
     })
   })
