@@ -3,7 +3,7 @@
 import PromptViewList from '../lib/prompt-view-list';
 
 describe('PromptViewList', () => {
-  describe('when setSelectedItem is called', () => {
+  describe('.setSelectedItem', () => {
     it('changes the selected item', () => {
       const list = new PromptViewList()
       list.initialize()
