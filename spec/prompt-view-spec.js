@@ -60,7 +60,6 @@ describe('PromptView', () => {
 
       // change the input
       prompt.getElement().querySelector('atom-text-editor').getModel().setText('test');
-      prompt.getElement().querySelector('atom-text-editor').dispatchEvent(new Event('keyup'));
 
       expect(prompt.getElement().querySelector(
         '.user-support-helper .section-footer .prompt-next'
