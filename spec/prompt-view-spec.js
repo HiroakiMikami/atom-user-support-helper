@@ -58,8 +58,9 @@ describe('PromptView', () => {
         '.user-support-helper .section-footer .prompt-next'
       ).hasAttribute('disabled')).toBe(true)
 
+      // change the input
       prompt.getElement().querySelector('atom-text-editor').getModel().setText('test');
-      prompt.getElement().querySelector('atom-text-editor').dispatchEvent(new Event('keyup'));
+
       expect(prompt.getElement().querySelector(
         '.user-support-helper .section-footer .prompt-next'
       ).hasAttribute('disabled')).toBe(false)
@@ -80,8 +81,11 @@ describe('PromptView', () => {
         expect(result.event).toBe('success');
         expect(result.value).toBe('foo');
       })
+
+      // Click the next button
       prompt.getElement().querySelector('atom-text-editor').getModel().setText('foo');
       prompt.getElement().querySelector('.prompt-next').click();
+
       waitsForPromise(() => {
         return p;
       });
