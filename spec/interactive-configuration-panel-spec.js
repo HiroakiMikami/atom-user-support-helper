@@ -22,6 +22,15 @@ describe('InteractiveConfigurationPanel', () => {
     })
   })
 
+  describe('when the first configuration is shown', () => {
+    it('disables the back button.', () => {
+        const p = panel.show(['foo'])
+
+        const back= panel.getPanel().getItem().querySelector('.user-support-helper .section-footer .prompt-back')
+        expect(back.style.display).toBe('none')
+    })
+  })
+
   describe('when the finish button is clicked', () => {
     it('set the configuration.', () => {
       waitsForPromise(() => {
