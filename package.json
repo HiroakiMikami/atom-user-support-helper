@@ -2,7 +2,7 @@
   "name": "user-support-helper",
   "main": "./lib/user-support-helper",
   "version": "0.0.0",
-  "description": "",
+  "description": "A helper for user support features in Atom.io",
   "keywords": [
     "helper",
     "user-support"
