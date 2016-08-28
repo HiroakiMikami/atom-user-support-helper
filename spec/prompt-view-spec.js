@@ -23,7 +23,7 @@ describe('PromptView', () => {
         message: '',
         detail: document.createElement('div')
       });
-      prompt.updateMenu(true, false);
+      prompt.updateMenu(true, false, false);
       expect(prompt.getElement().querySelector(
         '.user-support-helper .section-footer .prompt-skip'
       ).hasAttribute('disabled')).toBe(false)
@@ -35,13 +35,25 @@ describe('PromptView', () => {
         message: '',
         detail: document.createElement('div')
       });
-      prompt.updateMenu(false, true);
+      prompt.updateMenu(false, true, false);
       expect(prompt.getElement().querySelector(
         '.user-support-helper .section-footer .prompt-finish'
       ).style["display"]).toBe('block')
       expect(prompt.getElement().querySelector(
         '.user-support-helper .section-footer .prompt-next'
       ).style["display"]).toBe('none')
+    })
+    it('hides back button if started is true', () => {
+      const prompt = new PromptView({
+        type: 'input',
+        name: 'Test',
+        message: '',
+        detail: document.createElement('div')
+      });
+      prompt.updateMenu(false, false, true);
+      expect(prompt.getElement().querySelector(
+        '.user-support-helper .section-footer .prompt-back'
+      ).style.display).toBe("none")
     })
   })
   describe('when the input is changed', () => {
