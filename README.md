@@ -46,14 +46,15 @@ const config = helper.getInteractiveConfigurationPanel()
 config.add('atom-user-support-helper-sample.key1', {
   type: 'input',
   name: 'Key 1',
-  description: 'The sample of "input" type interface',
+  message: 'The sample of "input" type interface',
+  detail: 'The sample of "input" type interface',
   default: 'key',
   validate: (result) => { return (result.length !== 0) ? true: 'too short' }
 })
 config.add('atom-user-support-helper-sample.key2', {
   type: 'checkbox',
   name: 'Key 2',
-  description: 'The sample of "checkbox" type interface',
+  message: 'The sample of "checkbox" type interface',
   default: ['key1', 'key2'],
   choices: ['key1', 'key2', 'key3'],
   map: (result) => { return result.join(','); }
@@ -61,13 +62,13 @@ config.add('atom-user-support-helper-sample.key2', {
 config.add('atom-user-support-helper-sample.key3', {
   type: 'list',
   name: 'Key 3',
-  description: 'The sample of "list" type interface',
+  message: 'The sample of "list" type interface',
   choices: ['key1', 'key2', 'key3']
 })
 config.add('atom-user-support-helper-sample.key4', {
   type: 'dropdown',
   name: 'Key 4',
-  description: 'The sample of "dropdown" type interface',
+  message: 'The sample of "dropdown" type interface',
   default: 'key1',
   choices: ['key1', 'key2', 'key3']
 })
