@@ -10,7 +10,7 @@ describe('PromptViewMultipleList', () => {
       list.open(['1', '2', '3'])
 
       list.confirmed('2')
-      expect(list.element.querySelector('ol.list-group').children[1].classList.contains('selected')).toBe(true)
+      expect(list.element.querySelector('ol.list-group').children[1].classList.contains('prompt-selected')).toBe(true)
       expect(list.getSelectedItems()[0]).toBe('2')
     })
     it('removes the item to the selected items if it is selected.', () => {
@@ -20,7 +20,7 @@ describe('PromptViewMultipleList', () => {
 
       list.confirmed('2')
       list.confirmed('2')
-      expect(list.element.querySelector('ol.list-group').children[1].classList.contains('selected')).toBe(false)
+      expect(list.element.querySelector('ol.list-group').children[1].classList.contains('prompt-selected')).toBe(false)
       expect(list.getSelectedItems().length).toBe(0)
     })
   })
