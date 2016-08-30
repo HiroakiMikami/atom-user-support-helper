@@ -36,8 +36,8 @@ describe('InputInterfaces', () => {
   describe('.dropdown', () => {
     testInterface(InputInterfaces.dropdown, {choices: ['1', '2', '3']}, '1')
   })
-  describe('.checkbox', () => {
-    testInterface(InputInterfaces.checkbox, {choices: ['1', '2', '3']}, ['1', '2'], (v1, v2) => {
+  describe('.multiple-list', () => {
+    testInterface(InputInterfaces.multipleList, {choices: ['1', '2', '3']}, ['1', '2'], (v1, v2) => {
       expect(v1.length).toBe(v2.length)
     })
   })

@@ -52,9 +52,9 @@ config.add('atom-user-support-helper-sample.key1', {
   validate: (result) => { return (result.length !== 0) ? true: 'too short' }
 })
 config.add('atom-user-support-helper-sample.key2', {
-  type: 'checkbox',
+  type: 'multipleList',
   name: 'Key 2',
-  message: 'The sample of "checkbox" type interface',
+  message: 'The sample of "multipleList" type interface',
   default: ['key1', 'key2'],
   choices: ['key1', 'key2', 'key3'],
   map: (result) => { return result.join(','); }
@@ -74,7 +74,7 @@ config.add('atom-user-support-helper-sample.key4', {
 })
 ```
 
-There are 4 types of the input interfaces, a text editor (`input`), a check box, a list (this likes [the command palette](https://github.com/atom/command-palette)), and a dropdown list (`dropdown`). You can select the UI depending on a configuration.
+There are 4 types of the input interfaces, a text editor (`input`), list / multiple list (they like [the command palette](https://github.com/atom/command-palette)), and a dropdown list (`dropdown`). You can select the UI depending on a configuration.
 
 A `validate` function checks a user's input. A `map` function converts a user's input to the configuration value.
 
