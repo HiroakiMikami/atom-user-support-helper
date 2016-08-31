@@ -1,23 +1,18 @@
-# user-support-helper [![APM Version](https://img.shields.io/apm/v/user-support-helper.svg)](https://atom.io/packages/user-support-helper) [![APM Downloads](https://img.shields.io/apm/dm/user-support-helper.svg)](https://atom.io/packages/user-support-helper) [![Build Status](https://travis-ci.org/HiroakiMikami/atom-user-support-helper.svg?branch=master)](https://travis-ci.org/HiroakiMikami/atom-user-support-helper)
+# atom-user-support-helper  [![Build Status](https://travis-ci.org/HiroakiMikami/atom-user-support-helper.svg?branch=master)](https://travis-ci.org/HiroakiMikami/atom-user-support-helper)
 
-This package helps developers to create the user support features in Atom.io.
+This module helps developers to create the user support features in Atom.io.
 
 | Interactive Configuration Panel | Random Tips | Step-by-Step Tutorial|
 | :------------- | :------------- | :------------- |
 | ![](http://hiroakimikami.github.io/atom-user-support-helper/interactive-configuration-panel.gif) | ![](http://hiroakimikami.github.io/atom-user-support-helper/random-tips.gif) | WIP |
 
 # Usage
-This package provides a service to create the user support features.
-Add `user-support-helper` in the `consumedService` section of your `package.json` to use it:
+Add `atom-user-support-helper` to the `dependencies` in your `package.json` to use this module.
 
 ```json
 {
-  "consumedServices": {
-    "user-support-helper": {
-      "versions": {
-        "^0.0.0": "consumeUserSupportHelper"
-      }
-    }
+  "dependencies": {
+    'atom-user-support-helper': '>=0.0.0 <1.0.0'
   }
 }
 ```
@@ -25,10 +20,11 @@ Add `user-support-helper` in the `consumedService` section of your `package.json
 Then, write the initialization process in your main module:
 
 ```javascript
+import UserSupportHelper from 'atom-user-support-helper'
+
 export default {
-  activate(state) {},
-  deactivate() {},
-  consumeUserSupportHelper(helper) {
+  activate(state) {
+    const helper = new UserSupportHelper()
     // Write your initialization process using `helper`
   }
 }
@@ -42,6 +38,7 @@ It is useful if your package requires users to set some configurations at the be
 First add configuration keys to the helper:
 
 ```javascript
+const helper = new UserSupportHelper()
 const config = helper.getInteractiveConfigurationPanel()
 config.add('atom-user-support-helper-sample.key1', {
   type: 'input',
@@ -97,6 +94,7 @@ This feature enables your package to show the randomly selected tips.
 First add tips that you want to show:
 
 ```javascript
+const helper = new UserSupportHelper()
 const panel = helper.createRandomTipPanel('atom-user-support-helper-sample')
 panel.add('tip1', '<h1>Tip1</h1>')
 panel.add('tip2', document.createElement('div'))

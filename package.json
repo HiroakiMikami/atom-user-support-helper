@@ -1,23 +1,15 @@
 {
-  "name": "user-support-helper",
+  "name": "atom-user-support-helper",
   "main": "./lib/user-support-helper",
   "version": "0.0.0",
   "description": "A helper for user support features in Atom.io",
   "keywords": [
     "helper",
-    "user-support"
+    "user-support",
+    "Atom.io"
   ],
   "repository": "https://github.com/HiroakiMikami/atom-user-support-helper",
   "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "providedServices": {
-    "user-support-helper": {
-      "description": "A helper for user-support features",
-      "versions": { "0.0.0": "provideUserSupportHelper" }
-    }
-  },
   "dependencies": {
     "bluebird": ">=3.3.1 <4.0.0",
     "loophole": ">=1.1.0 < 2.0.0",
