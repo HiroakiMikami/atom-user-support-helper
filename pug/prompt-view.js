@@ -1,4 +1,6 @@
-div(class="user-support-helper prompot-view section-container #{className}")
+'use babel'
+
+export default `div(class="user-support-helper prompot-view section-container #{className}")
   div.section-heading
     a(class="pull-right close-icon")
     div.row
@@ -17,3 +19,4 @@ div(class="user-support-helper prompot-view section-container #{className}")
     button(class="pull-right btn menu-btn prompt-next") !{words.next}
     button(class="pull-right btn menu-btn prompt-skip") !{words.skip}
     button(class="pull-right btn menu-btn prompt-back") !{words.back}
+`
